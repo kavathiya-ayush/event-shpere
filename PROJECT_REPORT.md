@@ -243,6 +243,10 @@ Normalization is an essential database design procedure that organizes relationa
 
 The Software Development Life Cycle (SDLC) is a structured methodology followed by software engineering teams to design, develop, test, and maintain high-quality software systems. The Bhakti Events System was engineered following the **Classical Waterfall Model with Agile iterative testing** across seven distinct stages:
 
+### SDLC Waterfall Architecture Diagram
+
+![SDLC Waterfall Model](diagrams/01_sdlc_waterfall_model.png)
+
 ```mermaid
 graph TD
     S1[Stage 1: Planning & Requirement Analysis] --> S2[Stage 2: Defining System Requirements]
@@ -278,6 +282,8 @@ A Data Flow Diagram (DFD) provides a graphical representation of the flow of dat
 
 ### Context Level DFD (Level 0)
 
+![Context Level DFD](diagrams/02_dfd_level_0_context.png)
+
 ```mermaid
 graph LR
     User[Patron / Guest] -- "Event Search / Booking / Inquiries" --> Sys((0.0 Bhakti Events Management System))
@@ -287,6 +293,8 @@ graph LR
 ```
 
 ### 1st Level DFD (User Subsystems)
+
+![1st Level DFD User Subsystems](diagrams/03_dfd_level_1_user.png)
 
 ```mermaid
 graph TD
@@ -306,6 +314,8 @@ graph TD
 
 ### 2nd Level DFD (Booking Subsystem)
 
+![2nd Level DFD Booking Subsystem](diagrams/04_dfd_level_2_booking.png)
+
 ```mermaid
 graph TD
     Req[Select Seat Quantity & Tier] --> P3_1((3.1 Concurrency Lock Check))
@@ -318,6 +328,8 @@ graph TD
 ```
 
 ### Admin Side DFD
+
+![Admin Side DFD](diagrams/05_dfd_admin_side.png)
 
 ```mermaid
 graph TD
@@ -348,6 +360,8 @@ The Entity-Relationship (ER) Model is a conceptual data modeling blueprint that 
 - **Underlined Attributes:** Primary Key identifiers (`id`, `booking_reference`).
 
 ### Complete Entity-Relationship Diagram
+
+![Entity-Relationship Diagram](diagrams/06_er_diagram.png)
 
 ```mermaid
 erDiagram
@@ -429,6 +443,10 @@ erDiagram
 ## 11. Use Case Diagram
 
 A Use Case Diagram in Unified Modeling Language (UML) depicts the dynamic behavioral relationship between external actors and system use cases, delineating system boundaries and user capabilities.
+
+### UML Use Case Diagram
+
+![UML Use Case Diagram](diagrams/07_use_case_diagram.png)
 
 ```mermaid
 graph LR
