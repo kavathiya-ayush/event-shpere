@@ -1,0 +1,2442 @@
+/* ==========================================================================
+   Bhakti Events & Celebrations — Royal Indian Luxury Design System
+   Inspired by Bhakti Creation (Bespoke Craftsmanship & Royal Heritage)
+   Brand Colors: Deep Royal Burgundy (#7A1C2E) & Imperial Gold (#C5A059)
+   Canvas: Soft Warm Ivory (#FAF8F5) | Typography: Playfair Display & Poppins
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Royal Brand Palette */
+  --primary: #7A1C2E;             /* Deep Burgundy / Crimson */
+  --primary-dark: #530F1C;
+  --primary-light: #9B283F;
+  --primary-subtle: #F9ECEE;
+  
+  --secondary: #C5A059;           /* Muted Royal Gold */
+  --secondary-light: #E0C58A;
+  --secondary-dark: #987834;
+  --secondary-subtle: #FAF5EB;
+
+  /* Universal Brand Aliases for 100% template compatibility */
+  --burgundy: #7A1C2E;
+  --burgundy-dark: #530F1C;
+  --burgundy-deep: #2A040A;
+  --burgundy-light: #9B283F;
+  --burgundy-soft: #F9ECEE;
+
+  --gold: #C5A059;
+  --gold-light: #FDE68A;
+  --gold-dark: #987834;
+  --gold-border: rgba(197, 160, 89, 0.45);
+  --gold-soft: #FAF5EB;
+
+  --ivory: #FAF8F5;
+  --ivory-soft: #FDFBF7;
+  --charcoal: #1E1E1E;
+  --charcoal-muted: #5A5A5A;
+  --cream: #FFFDF9;
+
+  --accent-gold: #D4AF37;
+  --accent-gold-gradient: linear-gradient(135deg, #E6C887 0%, #C5A059 50%, #9B7830 100%);
+  --burgundy-gradient: linear-gradient(135deg, #7A1C2E 0%, #4D0E1B 100%);
+  --hero-overlay: linear-gradient(180deg, rgba(20, 6, 9, 0.45) 0%, rgba(20, 6, 9, 0.88) 100%);
+
+  /* Neutrals & Surfaces */
+  --bg-base: #FAF8F5;              /* Soft warm off-white */
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F4EFEB;
+  --bg-dark: #1A0D11;              /* Deep regal charcoal burgundy */
+
+  /* Typography Colors */
+  --text-primary: #1E1E1E;
+  --text-secondary: #5A5A5A;
+  --text-muted: #8A8A8A;
+  --text-light: #FAF8F5;
+  --text-gold: #C5A059;
+
+  /* Status Colors */
+  --success: #10B981;
+  --success-light: #D1FAE5;
+  --success-dark: #065F46;
+  --warning: #F59E0B;
+  --warning-light: #FEF3C7;
+  --danger: #EF4444;
+  --danger-light: #FEE2E2;
+
+  /* Borders & Shadows */
+  --border-gold: rgba(197, 160, 89, 0.35);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-light: rgba(255, 255, 255, 0.15);
+  
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 16px 40px rgba(122, 28, 46, 0.09);
+  --shadow-gold: 0 8px 25px rgba(197, 160, 89, 0.28);
+  --shadow-card-hover: 0 20px 45px rgba(122, 28, 46, 0.14);
+
+  /* Typography Fonts */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Geometry */
+  --container-width: 1240px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   Global Reset & Theme-Matched Gold Scrollbar
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.65;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Dynamic Gold Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1A0D11;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-gold-gradient);
+  border-radius: 5px;
+  border: 2px solid #1A0D11;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E6C887;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--primary);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 800; }
+h2 { font-size: clamp(1.9rem, 3.2vw, 2.75rem); }
+h3 { font-size: clamp(1.35rem, 2.2vw, 1.85rem); }
+h4 { font-size: 1.25rem; }
+
+p {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+}
+
+.text-gold { color: var(--secondary) !important; }
+.text-burgundy { color: var(--primary) !important; }
+.font-serif { font-family: var(--font-heading); }
+
+/* ==========================================================================
+   Royal Ornamental Gold Dividers
+   ========================================================================== */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem auto;
+  position: relative;
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--secondary);
+  display: inline-block;
+  margin-bottom: 0.6rem;
+}
+
+.section-title {
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 1.2rem auto 0 auto;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  height: 1px;
+  width: 50px;
+  background: var(--accent-gold-gradient);
+}
+
+.gold-divider-icon {
+  color: var(--secondary);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+/* ==========================================================================
+   Top Announcement Bar (Direct Contact & Flagship Atelier Info)
+   ========================================================================== */
+.top-bar {
+  background: linear-gradient(90deg, #1C0307 0%, #35060E 50%, #1C0307 100%);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.35);
+  letter-spacing: 0.25px;
+  position: relative;
+  z-index: 1001;
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 16px;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.top-bar-left, .top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.top-bar-badge {
+  background: rgba(197, 160, 89, 0.2);
+  color: #FDE68A;
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  padding: 2px 9px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.top-bar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #EDE4DC;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.top-bar-item:hover {
+  color: #FDE68A;
+}
+
+.top-bar-item i {
+  color: var(--gold-light);
+  font-size: 12px;
+}
+
+.top-bar-sep {
+  color: rgba(197, 160, 89, 0.4);
+  font-size: 10px;
+  user-select: none;
+}
+
+.top-bar-wa {
+  color: #A7F3D0 !important;
+  font-weight: 600;
+}
+.top-bar-wa:hover {
+  color: #FFFFFF !important;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #25D366;
+  display: inline-block;
+  box-shadow: 0 0 8px #25D366;
+  animation: pulse 1.8s infinite;
+}
+
+/* ==========================================================================
+   Site Header & Sticky Navigation
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(18, 4, 7, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1.5px solid rgba(197, 160, 89, 0.35);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-header.scrolled {
+  background: rgba(14, 3, 6, 0.98);
+  padding: 2px 0;
+  border-bottom: 1.5px solid var(--gold);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.nav-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand-crest {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7A1C2E 0%, #2A040A 100%);
+  border: 1.5px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FDE68A;
+  font-size: 22px;
+  box-shadow: 0 0 16px rgba(197, 160, 89, 0.4);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-identity:hover .brand-crest {
+  transform: scale(1.05) rotate(-3deg);
+  box-shadow: 0 0 22px rgba(253, 230, 138, 0.55);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.6px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.brand-name span {
+  color: #FDE68A;
+  text-shadow: 0 0 12px rgba(253, 230, 138, 0.35);
+}
+
+.brand-tagline {
+  display: block !important;
+  font-family: var(--font-body) !important;
+  font-size: 10.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1.8px !important;
+  text-transform: uppercase !important;
+  color: #E2C482 !important;
+  margin-top: 3px !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8) !important;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: #F8FAFC;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 8px 3px;
+  position: relative;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #FDE68A;
+  text-shadow: 0 0 8px rgba(253, 230, 138, 0.4);
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  color: #FDE68A !important;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: linear-gradient(90deg, #C5A059 0%, #FDE68A 50%, #C5A059 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(253, 230, 138, 0.6);
+}
+
+/* Luxury Action Buttons in Header */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.btn-header-wa {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 24px;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-header-wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.55);
+  background: linear-gradient(135deg, #22BF5B 0%, #0E7367 100%);
+}
+
+.btn-header-signin {
+  background: rgba(197, 160, 89, 0.12);
+  color: #FDE68A !important;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 24px;
+  padding: 7px 18px;
+  border: 1.5px solid var(--gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.btn-header-signin:hover {
+  background: linear-gradient(135deg, #E6C887 0%, #C5A059 100%);
+  color: #1E0307 !important;
+  border-color: #FDE68A;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+  transform: translateY(-2px);
+}
+
+/* User Profile Menu Button & Luxury Dropdown */
+.user-menu-wrapper {
+  position: relative;
+}
+
+.user-menu-btn {
+  background: rgba(197, 160, 89, 0.12);
+  border: 1.5px solid var(--gold);
+  color: #FFF !important;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 24px;
+  padding: 5px 14px 5px 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+.user-menu-btn:hover {
+  background: rgba(197, 160, 89, 0.22);
+  border-color: var(--gold-light);
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+}
+
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 240px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(28, 3, 7, 0.25), 0 0 0 1px rgba(197, 160, 89, 0.35);
+  padding: 8px 0;
+  display: none;
+  flex-direction: column;
+  z-index: 1050;
+  overflow: hidden;
+}
+
+.user-dropdown.show {
+  display: flex !important;
+  animation: dropdownFade 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-dropdown-header {
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #FFFDF9 0%, #FAF5EE 100%);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.user-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--charcoal);
+  text-decoration: none;
+  transition: all 0.18s ease;
+}
+.user-dropdown-item i {
+  width: 18px;
+  color: var(--gold);
+  font-size: 14px;
+}
+.user-dropdown-item:hover {
+  background: var(--ivory-soft);
+  color: var(--burgundy);
+  padding-left: 22px;
+}
+.user-dropdown-item.danger-item {
+  color: #DC2626;
+}
+.user-dropdown-item.danger-item i {
+  color: #DC2626;
+}
+.user-dropdown-item.danger-item:hover {
+  background: #FEF2F2;
+  color: #B91C1C;
+}
+
+.user-dropdown-item.admin-badge-item {
+  background: linear-gradient(135deg, rgba(122, 28, 46, 0.08) 0%, rgba(197, 160, 89, 0.12) 100%);
+  color: var(--burgundy-dark);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Buttons & Pills
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border: 1px solid transparent;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--burgundy-gradient);
+  color: #FFFFFF;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  box-shadow: 0 4px 14px rgba(122, 28, 46, 0.4);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #9B283F 0%, #530F1C 100%);
+  color: #FFFFFF;
+  border-color: var(--secondary);
+}
+
+.btn-secondary {
+  background: var(--accent-gold-gradient);
+  color: #1A0D11;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.35);
+}
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #F3D393 0%, #D4AF37 100%);
+  color: #1A0D11;
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+}
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #22BF5B 0%, #0E7367 100%);
+  color: #FFFFFF;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #FFFFFF;
+  border: 1.5px solid var(--secondary);
+}
+.btn-ghost:hover {
+  background: rgba(197, 160, 89, 0.15);
+  color: var(--secondary-light);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--secondary-dark);
+  border: 1.5px solid var(--secondary);
+}
+.btn-outline-gold:hover {
+  background: var(--secondary-subtle);
+  color: var(--primary);
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+.btn-lg {
+  padding: 13px 30px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+/* Badges */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(197, 160, 89, 0.15);
+  color: var(--secondary-dark);
+  border: 1px solid var(--border-gold);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.category-badge {
+  background: rgba(26, 13, 17, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--secondary-light);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-gold);
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+}
+.badge-success { background: #D1FAE5; color: #065F46; }
+.badge-warning { background: #FEF3C7; color: #92400E; }
+.badge-danger  { background: #FEE2E2; color: #991B1B; }
+
+/* ==========================================================================
+   Form Controls & Luxury Input Design System
+   ========================================================================== */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+
+.form-group label i {
+  color: var(--gold);
+  font-size: 13px;
+}
+
+.form-control {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  padding: 13px 18px !important;
+  border: 1.5px solid var(--gold-border) !important;
+  border-radius: 10px !important;
+  background: #FFFFFF !important;
+  font-family: var(--font-body) !important;
+  font-size: 14.5px !important;
+  color: var(--charcoal) !important;
+  outline: none !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+}
+
+.form-control:focus {
+  border-color: var(--burgundy) !important;
+  box-shadow: 0 0 0 3.5px rgba(122, 28, 46, 0.14) !important;
+  background: #FFFDF9 !important;
+}
+
+.form-control::placeholder {
+  color: #94A3B8;
+  font-size: 13.5px;
+}
+
+textarea.form-control {
+  resize: vertical !important;
+  min-height: 120px !important;
+  line-height: 1.6 !important;
+}
+
+select.form-control {
+  cursor: pointer !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23C5A059'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 14px center !important;
+  background-size: 16px !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  padding-right: 40px !important;
+}
+
+/* ==========================================================================
+   Hero Section (Royal Indian Celebration Showcase)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  background: linear-gradient(180deg, rgba(20, 6, 9, 0.55) 0%, rgba(20, 6, 9, 0.9) 100%),
+              url('../images/events/wedding.jpg') center/cover no-repeat;
+  color: #FFFFFF;
+  padding: 110px 20px 120px;
+  text-align: center;
+  border-bottom: 2px solid var(--secondary);
+}
+
+.hero-container {
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section .badge-pill {
+  background: rgba(197, 160, 89, 0.2);
+  color: var(--secondary-light);
+  border-color: rgba(197, 160, 89, 0.4);
+  margin-bottom: 22px;
+}
+
+.hero-section h1 {
+  color: #FFFFFF;
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-section h1 span {
+  background: var(--accent-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-section p {
+  color: #E2E8F0;
+  font-size: clamp(16px, 2.2vw, 19px);
+  font-weight: 300;
+  max-width: 720px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+
+.hero-cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Quick Search Box */
+.search-bar-box {
+  background: rgba(26, 13, 17, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-gold);
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+
+.search-input-group {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 4px 14px;
+  gap: 10px;
+}
+
+.search-input-group i {
+  color: var(--secondary-dark);
+}
+
+.search-input-group input,
+.search-input-group select {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 10px 0;
+  font-family: inherit;
+  font-size: 14.5px;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.search-category-select {
+  border-left: 1px solid var(--border-subtle);
+  padding-left: 12px;
+  cursor: pointer;
+}
+
+/* Platform Heritage Stats Row with Glassmorphism & Gold Highlights */
+.hero-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 860px;
+  margin: 42px auto 0;
+  background: rgba(26, 13, 17, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--gold-border);
+  border-radius: 16px;
+  padding: 22px 28px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(197, 160, 89, 0.25);
+  padding: 0 10px;
+}
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--gold-light);
+  line-height: 1.1;
+  margin-bottom: 4px;
+  text-shadow: 0 2px 10px rgba(197, 160, 89, 0.35);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #E2E8F0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Trust Metrics Strip (Inspired by Bhakti Creation) */
+.trust-strip {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-md);
+  margin-top: -45px;
+  position: relative;
+  z-index: 10;
+  padding: 24px 30px;
+}
+
+.trust-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.trust-metric-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.metric-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: var(--primary-subtle);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  border: 1px solid var(--border-gold);
+}
+
+.metric-number {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+.metric-label {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Event Showcase & Luxury Cards
+   ========================================================================== */
+.events-section {
+  padding: 80px 0;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 32px;
+}
+
+.event-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-gold);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--secondary);
+}
+
+.card-img-holder {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: var(--bg-dark);
+}
+
+.card-img-holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.event-card:hover .card-img-holder img {
+  transform: scale(1.06);
+}
+
+.card-img-holder .category-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+}
+
+.date-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--burgundy-gradient);
+  color: #FFFFFF;
+  border: 1px solid var(--secondary);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.date-badge .date-day {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--secondary-light);
+  line-height: 1;
+  display: block;
+}
+
+.date-badge .date-month {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.event-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.event-card h3 {
+  font-size: 21px;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.event-card h3 a {
+  color: var(--primary);
+}
+.event-card h3 a:hover {
+  color: var(--secondary-dark);
+}
+
+.event-card p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-gold);
+  margin-top: auto;
+}
+
+.price-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.price-value {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   Bespoke Event Management Services (Why Bhakti Events)
+   ========================================================================== */
+.services-section {
+  background: #FFFFFF;
+  padding: 90px 0;
+  border-top: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--border-gold);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 30px;
+  margin-top: 45px;
+}
+
+.service-card {
+  background: var(--bg-base);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 35px 28px;
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-md);
+  background: #FFFFFF;
+}
+
+.service-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  background: var(--burgundy-gradient);
+  color: var(--secondary-light);
+  border: 1px solid var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(122, 28, 46, 0.25);
+}
+
+.service-card h4 {
+  font-size: 20px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Single Event Details Page
+   ========================================================================== */
+.event-hero {
+  position: relative;
+  height: 420px;
+  background-color: var(--bg-dark);
+  overflow: hidden;
+  border-bottom: 2px solid var(--secondary);
+}
+
+.event-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.event-hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px 20px;
+  background: linear-gradient(180deg, transparent 0%, rgba(26, 13, 17, 0.96) 100%);
+}
+
+.event-hero-content h1 {
+  color: #FFFFFF;
+  font-size: clamp(28px, 4.2vw, 44px);
+  margin-bottom: 12px;
+}
+
+.event-details-layout {
+  display: grid;
+  grid-template-columns: 2fr 1.1fr;
+  gap: 40px;
+  padding: 60px 20px;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.event-main-content {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-gold);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.event-main-content h3 {
+  font-size: 23px;
+  color: var(--primary);
+  margin: 30px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-gold);
+}
+.event-main-content h3:first-child { margin-top: 0; }
+
+.event-main-content p {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #333333;
+}
+
+.booking-card {
+  position: sticky;
+  top: 95px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--secondary);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-gold);
+}
+
+.booking-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-gold);
+}
+
+.booking-price-row .value {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   Printable Royal E-Ticket Pass
+   ========================================================================== */
+.ticket-wrapper {
+  max-width: 740px;
+  margin: 60px auto 80px;
+  padding: 0 20px;
+}
+
+.ticket-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 2px solid var(--secondary);
+  box-shadow: var(--shadow-gold);
+  overflow: hidden;
+}
+
+.ticket-top {
+  background: var(--burgundy-gradient);
+  color: #FFFFFF;
+  padding: 30px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--secondary);
+}
+
+.ticket-body {
+  padding: 35px;
+}
+
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 25px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--border-gold);
+}
+
+.ticket-field .label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.ticket-field .value {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+/* ==========================================================================
+   Global Footer & Floating Actions
+   ========================================================================== */
+.site-footer {
+  background: #120508;
+  color: #CBD5E1;
+  padding: 80px 20px 25px;
+  border-top: 2px solid var(--secondary);
+  margin-top: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.3fr;
+  gap: 40px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.footer-col h4 {
+  font-family: var(--font-heading);
+  color: var(--secondary);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.footer-col p {
+  color: #94A3B8;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #CBD5E1;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-links a:hover {
+  color: var(--secondary-light);
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  max-width: var(--container-width);
+  margin: 25px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #94A3B8;
+}
+
+/* Floating WhatsApp Concierge Button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  z-index: 1500;
+  transition: var(--transition-fast);
+}
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+  color: #FFFFFF;
+}
+
+/* Modals */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 5, 8, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-box {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  max-width: 560px;
+  width: 100%;
+  padding: 35px;
+  box-shadow: var(--shadow-gold);
+  border: 1.5px solid var(--secondary);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 28px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.close-btn:hover { color: var(--primary); }
+
+/* ==========================================================================
+   Luxury Agency Polish: Scroll Progress Bar & Sticky Header
+   ========================================================================== */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, #FFF2B2 100%);
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+  transition: width 0.08s ease-out;
+}
+
+.main-header.scrolled {
+  position: sticky;
+  top: 0;
+  background: rgba(83, 15, 28, 0.94) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid var(--gold);
+  z-index: 1000;
+  animation: slideDown 0.35s ease;
+}
+
+.main-header.scrolled .nav-inner {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+/* Shimmering Button Effect */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: rotate(25deg);
+  transition: all 0.75s ease;
+}
+.btn-primary:hover::after {
+  left: 140%;
+}
+
+/* ==========================================================================
+   Interactive Royal Celebration Budget Estimator
+   ========================================================================== */
+.estimator-section {
+  padding: 85px 0;
+  background: linear-gradient(180deg, var(--ivory) 0%, #F5EDE4 100%);
+  position: relative;
+}
+
+.estimator-card {
+  background: #FFFFFF;
+  border: 1.5px solid var(--gold-border);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(122, 28, 46, 0.08);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 40px;
+}
+
+.estimator-control-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--burgundy);
+  margin-bottom: 8px;
+}
+
+.estimator-group {
+  margin-bottom: 22px;
+}
+
+.estimator-label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.range-slider-wrapper {
+  position: relative;
+  padding: 5px 0;
+}
+
+.range-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #E5D5C5;
+  outline: none;
+  cursor: pointer;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--burgundy);
+  border: 2px solid var(--gold);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.estimator-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--gold-border);
+  border-radius: 8px;
+  background: var(--ivory-soft);
+  font-family: inherit;
+  font-size: 14.5px;
+  color: var(--charcoal);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.estimator-select:focus {
+  border-color: var(--burgundy);
+}
+
+/* Estimator Receipt Box */
+.estimator-receipt {
+  background: linear-gradient(145deg, #38070F 0%, #681525 100%) !important;
+  border-radius: 18px !important;
+  padding: 32px !important;
+  color: #FFFFFF !important;
+  border: 2px solid #C5A059 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-shadow: 0 20px 45px rgba(56, 7, 15, 0.45) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.receipt-header h4 {
+  font-family: var(--font-heading) !important;
+  color: #FDE68A !important;
+  font-size: 22px !important;
+  margin-bottom: 4px !important;
+}
+.receipt-header p {
+  color: #F5EBE6 !important;
+  font-size: 13px !important;
+  margin-bottom: 20px !important;
+}
+
+.receipt-breakdown {
+  border-top: 1px dashed rgba(197, 160, 89, 0.4) !important;
+  border-bottom: 1px dashed rgba(197, 160, 89, 0.4) !important;
+  padding: 18px 0 !important;
+  margin-bottom: 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.receipt-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 13.5px !important;
+  color: #F5EBE6 !important;
+}
+.receipt-row span:last-child {
+  font-weight: 700 !important;
+  color: #FDE68A !important;
+  font-family: var(--font-heading) !important;
+  font-size: 15.5px !important;
+}
+
+.receipt-total {
+  background: rgba(0, 0, 0, 0.35) !important;
+  border: 1.5px solid #C5A059 !important;
+  border-radius: 12px !important;
+  padding: 16px 20px !important;
+  margin-bottom: 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.receipt-total .label {
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  color: #E5D0BA !important;
+  font-weight: 700 !important;
+}
+.receipt-total .value {
+  font-size: 32px !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 800 !important;
+  color: #FDE68A !important;
+  text-shadow: 0 0 15px rgba(253, 230, 138, 0.35) !important;
+}
+
+/* ==========================================================================
+   Royal Destinations & Palace Showcase
+   ========================================================================== */
+.destinations-section {
+  padding: 85px 0;
+  background: #FFFFFF;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.destination-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 380px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  border: 1px solid var(--gold-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.destination-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(122, 28, 46, 0.25);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.destination-card:hover img {
+  transform: scale(1.08);
+}
+
+.dest-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(18,5,8,0.92) 85%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 26px 22px;
+  color: #FFFFFF;
+}
+
+.dest-badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(197, 160, 89, 0.3);
+  backdrop-filter: blur(8px);
+  color: var(--gold-light);
+  border: 1px solid var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.dest-gradient h3 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  color: var(--gold-light);
+  margin-bottom: 4px;
+}
+.dest-gradient p {
+  font-size: 13px;
+  color: #E2E8F0;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.dest-specs {
+  display: flex;
+  gap: 14px;
+  font-size: 12px;
+  color: #CBD5E1;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 10px;
+}
+
+/* ==========================================================================
+   Curated Royal Portfolio Gallery
+   ========================================================================== */
+.portfolio-section {
+  padding: 85px 0;
+  background: var(--ivory);
+}
+
+.portfolio-filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 30px 0 40px;
+}
+
+.filter-btn {
+  padding: 9px 20px;
+  border-radius: 30px;
+  background: #FFFFFF;
+  border: 1px solid var(--gold-border);
+  color: var(--charcoal);
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--burgundy);
+  color: var(--gold-light);
+  border-color: var(--burgundy);
+  box-shadow: 0 4px 12px rgba(122, 28, 46, 0.25);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.portfolio-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  height: 280px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border: 1px solid var(--gold-border);
+  transition: all 0.35s ease;
+}
+.portfolio-card.hidden {
+  display: none;
+}
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(122, 28, 46, 0.2);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.portfolio-card:hover img {
+  transform: scale(1.06);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(83,15,28,0.92) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: #FFFFFF;
+  transition: opacity 0.3s ease;
+}
+.portfolio-overlay h4 {
+  font-family: var(--font-heading);
+  color: var(--gold-light);
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+.portfolio-overlay span {
+  font-size: 12.5px;
+  color: #E2E8F0;
+}
+
+/* ==========================================================================
+   Royal Patrons & Testimonials Carousel
+   ========================================================================== */
+.testimonials-section {
+  padding: 85px 0;
+  background: #FFFFFF;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+  margin-top: 40px;
+}
+
+.testimonial-card {
+  background: var(--ivory-soft);
+  border: 1px solid var(--gold-border);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 0.25s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.quote-icon {
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.testimonial-text {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--charcoal);
+  font-style: italic;
+  margin-bottom: 22px;
+}
+
+.client-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid var(--gold-border);
+  padding-top: 16px;
+}
+
+.client-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--burgundy);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  border: 1.5px solid var(--gold);
+}
+
+.client-info h5 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--burgundy);
+  margin-bottom: 2px;
+}
+.client-info span {
+  font-size: 12px;
+  color: var(--charcoal-muted);
+}
+
+/* ==========================================================================
+   Live Countdown Timer & Multi-Tier Passes
+   ========================================================================== */
+.countdown-banner {
+  background: linear-gradient(135deg, var(--burgundy-dark) 0%, var(--burgundy) 100%);
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  padding: 20px 24px;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 25px rgba(122, 28, 46, 0.15);
+}
+
+.countdown-digits {
+  display: flex;
+  gap: 12px;
+}
+
+.countdown-segment {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: 8px;
+  padding: 8px 14px;
+  text-align: center;
+  min-width: 60px;
+}
+
+.countdown-val {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+.countdown-lbl {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #E2E8F0;
+  letter-spacing: 0.8px;
+  margin-top: 4px;
+}
+
+/* Pass Tier Selection in Booking Widget */
+.pass-tier-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tier-option {
+  border: 1.5px solid var(--gold-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tier-option:hover {
+  border-color: var(--gold);
+  background: var(--ivory-soft);
+}
+.tier-option.selected {
+  border-color: var(--burgundy);
+  background: var(--ivory-soft);
+  box-shadow: 0 4px 12px rgba(122, 28, 46, 0.12);
+}
+
+.tier-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tier-radio {
+  accent-color: var(--burgundy);
+}
+
+.tier-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--burgundy);
+  display: block;
+}
+.tier-desc {
+  font-size: 11.5px;
+  color: var(--charcoal-muted);
+}
+.tier-rate {
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--burgundy-dark);
+}
+
+/* ==========================================================================
+   Royal Authentication Experience (Login & Register Portals)
+   ========================================================================== */
+.auth-section {
+  min-height: calc(100vh - 120px);
+  background: radial-gradient(circle at 10% 20%, rgba(122, 28, 46, 0.04) 0%, transparent 60%),
+              radial-gradient(circle at 90% 80%, rgba(197, 160, 89, 0.07) 0%, transparent 60%),
+              var(--bg-base);
+  padding: 55px 20px 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.auth-master-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1.5px solid var(--gold-border);
+  box-shadow: 0 25px 65px rgba(122, 28, 46, 0.12), 0 4px 20px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  min-height: 620px;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Left Showcase Panel */
+.auth-showcase-panel {
+  background: linear-gradient(145deg, #1E0307 0%, #3D0712 50%, #170205 100%);
+  color: #FFFFFF;
+  padding: 55px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  border-right: 1.5px solid var(--gold-border);
+}
+
+.auth-showcase-panel::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.auth-showcase-watermark {
+  position: absolute;
+  bottom: -40px;
+  right: -30px;
+  font-size: 260px;
+  color: rgba(197, 160, 89, 0.04);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.auth-showcase-content {
+  position: relative;
+  z-index: 2;
+}
+
+.auth-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(197, 160, 89, 0.15);
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  padding: 6px 16px;
+  color: var(--gold-light);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.auth-showcase-title {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.auth-showcase-title span {
+  background: var(--accent-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.auth-showcase-desc {
+  font-size: 14px;
+  color: #F1E5E1;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.auth-perks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.auth-perk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.auth-perk-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(197, 160, 89, 0.16);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.auth-perk-text strong {
+  display: block;
+  font-size: 13.5px;
+  color: #FFFFFF;
+  margin-bottom: 2px;
+}
+
+.auth-perk-text p {
+  font-size: 12px;
+  color: #D1B8B3;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.auth-quote-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: 14px;
+  padding: 16px 18px;
+  font-size: 12px;
+  color: #F8ECE8;
+  font-style: italic;
+  line-height: 1.55;
+  margin-top: auto;
+}
+
+.auth-quote-author {
+  display: block;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* Right Form Panel */
+.auth-form-panel {
+  padding: 50px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.auth-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--charcoal-muted);
+  text-decoration: none;
+  margin-bottom: 22px;
+  transition: color 0.2s ease;
+}
+.auth-back-link:hover {
+  color: var(--burgundy);
+}
+
+.auth-header-text h2 {
+  font-family: var(--font-heading);
+  color: var(--burgundy);
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.auth-header-text p {
+  color: var(--charcoal-muted);
+  font-size: 13.5px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+/* Password Input with Eye Toggle */
+.password-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrap input {
+  padding-right: 48px !important;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+.password-toggle-btn:hover {
+  color: var(--burgundy);
+}
+
+/* Demo Credentials Box */
+.demo-access-box {
+  background: linear-gradient(135deg, #FFFDF9 0%, #FAF5EE 100%);
+  border: 1.5px solid var(--gold-border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-top: 22px;
+  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.08);
+}
+
+.demo-access-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.demo-access-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--burgundy);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.demo-access-title i {
+  color: var(--gold);
+}
+
+.demo-badge-eval {
+  font-size: 10px;
+  background: var(--burgundy);
+  color: var(--gold-light);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.demo-access-sub {
+  font-size: 11.5px;
+  color: var(--charcoal-muted);
+  margin: 0 0 10px;
+}
+
+.demo-buttons-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.demo-key-btn {
+  background: #FFFFFF;
+  border: 1.5px solid var(--gold-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--burgundy);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+.demo-key-btn:hover {
+  background: var(--burgundy);
+  color: #FFFFFF;
+  border-color: var(--burgundy);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(122, 28, 46, 0.25);
+}
+
+.demo-key-btn.active-loaded {
+  border-color: #10B981;
+  color: #065F46;
+  background: #ECFDF5;
+}
+
+/* Security Trust Footer */
+.auth-trust-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 11.5px;
+  color: #94A3B8;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.auth-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
